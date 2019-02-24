@@ -1,0 +1,59 @@
+<div class="product-form container" *ngIf="product">
+    <form action="" #f="ngForm" autocomplete="off">
+        <div class="field" [class.is-invalid]="name.invalid && name.touched">
+            <label class="label">
+                {{ name.invalid && name.touched ? 'Ingresa un nombre válido' : 'Nombre:'}}
+            </label>
+            <div class="control">
+                <input
+                    name="name"
+                    class="input"
+                    [(ngModel)]="product.name"
+                    type="text"
+                    placeholder="Nombre"
+                    #name="ngModel"
+                    required
+                />
+            </div>
+        </div>
+        <div class="field" [class.is-invalid]="description.invalid && description.touched">
+            <label class="label">
+                {{ description.invalid && description.touched ? 'Ingresa una descipción' : 'Descipción:' }}</label>
+            <div class="control">
+                <textarea
+                    name="description"
+                    class="textarea"
+                    type="text"
+                    [(ngModel)]="product.description"
+                    placeholder="Descripción..."
+                    #description="ngModel"
+                    required
+                    minlength="40"
+                >
+                </textarea>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Precio</label>
+            <div class="control">
+                <input
+                    name="price"
+                    class="input"
+                    [(ngModel)]="product.price"
+                    type="text"
+                    placeholder="Nombre"
+                    required
+                />
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Activado</label>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button class="button is-link" (click)="onSubmit(f)" [disabled]="f.invalid">Guardar</button>
+            </div>
+        </div>
+
+    </form>
+</div>

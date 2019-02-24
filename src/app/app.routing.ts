@@ -1,0 +1,24 @@
+import { Route } from '@angular/router';
+import { ProductsComponent } from './products/products.component';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
+import { ProductCreateComponent } from './products/product-create/product-create.component';
+
+export const routes: Route[] = [
+    {
+        path: 'productos',
+        component: ProductsComponent
+    },
+    {
+        path: 'nuevo-producto',
+        component: ProductCreateComponent
+    },
+    {
+        path: 'productos/:id',
+        component: ProductEditComponent
+    },
+    {
+        path: '',
+        redirectTo: 'productos',
+        pathMatch: 'full'
+    }
+];

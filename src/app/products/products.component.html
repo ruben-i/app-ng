@@ -1,0 +1,9 @@
+<div class="products" style="text-align: center;">
+    <app-product-list
+        [products]="products"
+        (deleteProduct)="deleteProduct($event)"
+        (changeState)="changeState($event)"
+    ></app-product-list>
+
+    <a routerLink="/nuevo-producto" class="button">Nuevo Producto</a>
+</div>

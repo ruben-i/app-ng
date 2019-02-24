@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+.is-invalid label {
+    color: red;
+}
+
+.is-invalid input,
+.is-invalid textarea {
+    border: 1px solid red;
+}
